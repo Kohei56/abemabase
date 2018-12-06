@@ -1,0 +1,94 @@
+html {
+  font-size: 62.5%; /* sets the base font to 10px for easier math */
+}
+
+body {
+  font-size: 16px;
+  font-size: 1.6rem;  
+  /* sets the default sizing to make sure nothing is actually 10px */
+  color:#000; /* 文字の色 */
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+  background-color: #fff;
+}
+ 
+h1 {
+  font-size: 32px;
+  font-size: 3.2rem;
+  font-weight: bold;
+}
+
+ul {
+  padding: 0px;
+}
+
+li {
+  list-style-position: inside;
+  list-style-type: none;
+}
+
+.searchResult{
+  width: 700px;
+}
+
+article div.epTitle {
+  margin-top: 10px;
+}
+
+article div.epDec {
+  margin-top: 2px;
+}
+
+.content{
+  margin-top: 15px;
+}
+
+.sampleEp{
+  margin-top: 30px;
+ position: relative;
+ margin: 2em auto;
+ padding: 1.2em 1.2em 0.7em 1.2em ;
+ border: 1px solid #999; /* 枠線の太さ・色 */
+ width: 600px;
+ display: block;
+}
+
+.title-box11 {
+ position: absolute;
+ padding: 0 .5em;
+ left: 20px;
+ top: -15px;
+ background-color: #fff; /* タイトル背景色 */
+}
+
+.search_container{
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #999;
+  margin-top: 6px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 1.9em;
+  width: 300px;
+  overflow: hidden;
+}
+.search_container input[type="text"]{
+  border: none;
+  height: 1.9em;
+}
+.search_container input[type="text"]:focus {
+  outline: 0;
+}
+.search_container input[type="submit"]{
+  cursor: pointer;
+  font-family: FontAwesome;
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  color: #3879D9;
+  position: absolute;
+  width: 2.3em;
+  height: 2.3em;
+  right: 0;
+  top: -10px;
+  outline : none;
+}

@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "basic-auth": "^2.0.1",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-ejs-extend": "^0.0.1",
+    "mongoose": "^5.3.14"
+  }
+}

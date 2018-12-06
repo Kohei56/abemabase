@@ -1,0 +1,17 @@
+<% extend('layout') %>
+<% if (locals.tag) { %>
+<h1>タグ: <%= tag %></h1>
+<% } %>
+
+<% if (locals.value) { %>
+<h1>「<%= value %>」を検索　<%= meta.length %>件Hit!</h1>
+<% } %>
+
+<div class="searchResult">
+  <% for(let i = 0; i < meta.length; i++) { %>
+  <article>
+      <div class="epTitle"><a href=/detail/<%= meta[i]._id %>><%= meta[i].epTitle %></a></div>
+      <div class="epDec"><%= meta[i].epDec %></div>
+  </article>
+  <% } %>
+</div>

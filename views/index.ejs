@@ -1,0 +1,11 @@
+<% extend('layout') %>
+<div class="sampleEp float-left">
+  <span class="title-box11">こんなエピソードもあります。（ランダムで<%= meta.length %>件表示）</span>
+  <ul>
+  <% for(let i = 0; i < meta.length; i++) { -%>
+    <li>
+        <a href=/detail/<%= meta[i]._id %>><%= meta[i].epTitle %></a>
+    </li>
+  <% } -%>
+  </ul>
+</div>

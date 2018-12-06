@@ -1,0 +1,27 @@
+<h1><a href="/">Node Meta Search β0.7</a></h1>
+<form action="/search" method="get">
+    <div>
+      <% if (locals.target === "epTitle") {
+           var epTitleChecked = "checked"
+         } else if (locals.target === "cast") {
+           var castChecked = "checked"
+         } else {
+           var epDetailChecked = "checked"
+         } -%>
+      検索対象：
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="t" value="epTitle" <%= epTitleChecked %>><label class="form-check-label">エピソード名</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="t" value="epDetail" <%= epDetailChecked %>><label class="form-check-label">概要文</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="t" value="cast" <%= castChecked %>><label class="form-check-label">出演者</label>
+      </div>
+    </div>
+
+    <div class="form-inline search_container">
+      <input class="" type="text" size="25" placeholder="キーワードを入力" name="q" value="<% if (locals.value) { %><%= value %><% } %>"/>
+      <input class="" type="submit" value="&#xf002"/>
+    </div>
+</form>
