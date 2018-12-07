@@ -1,30 +1,31 @@
 const express = require('express');
+const router = express.Router();
 const app = express();
 
 //Basic認証
 const auth = require('./auth');
-app.use(auth);
+router.use(auth);
 
 //MongoDB モデルの読み込み
 const model = require('./model');
 const abema = model.abema;
 
 const bodyParser = require('body-parser')
-app.use(bodyParser.urlencoded({ extended: true}))
-app.use(express.static('public'));
+router.use(bodyParser.urlencoded({ extended: true}))
+router.use(express.static('public'));
 
 app.engine('ejs', require('express-ejs-extend'));
 app.set('view engine', 'ejs');
 
 
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
   //ランダムでx件表示
    abema.aggregate([{$sample: {size:10}}], (err, meta) => {
       res.render('index', { meta: meta})
    });
 });
 
-app.get('/search', (req, res) => {
+router.get('/search', (req, res) => {
 
   //クエリが空の場合 Erroページへ
   if ( !req.query.q ){
@@ -44,7 +45,7 @@ app.get('/search', (req, res) => {
   });
 });
 
-app.get('/detail/*', (req, res) => {
+router.get('/detail/*', (req, res) => {
   const query = req.params[0]
 
   abema.find({_id: query}
@@ -53,7 +54,7 @@ app.get('/detail/*', (req, res) => {
   });
 });
 
-app.get('/tag/*', (req, res) => {
+router.get('/tag/*', (req, res) => {
   const tag = req.params[0]
 
   abema.find({tag: tag}
@@ -79,6 +80,8 @@ function regexMaker(q){
 
   return regexPattern
 }
+
+app.use('/abemabase', router);
 
 const port = process.env.PORT || 2500;
 app.listen(port);
