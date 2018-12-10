@@ -1,62 +1,16 @@
 <% extend('layout') %>
-<style>
-ul {
-    list-style:none;
-}
-
-div.col1 {
-    width: 200px;
-    float: left;
-    padding: 10px;
-}
-
-div.col2 {
-    width: 500px;
-    min-height: 30px;
-    border-left: 1px solid #ccc;
-    display: block;
-    overflow: auto;
-    padding: 10px;
-}
-</style>
-<% for(let i = 0; i < meta.length; i++) { %>
-<article>
-    <ul class="table">
-        <li>
-            <div class="col1">エピソードタイトル</div><div class="col2"><%= meta[i].epTitle %></div>
-        </li><li>
-            <div class="col1">エピソード概要</div><div class="col2"><%= meta[i].epDec %></div>
-        </li><li>                
-            <div class="col1">エピソード詳細</div><div class="col2"><%= meta[i].epDetail %></div>
-        </li><li>
-            <div class="col1">コピーライト</div><div class="col2"><%= meta[i].copyright %></div>
-        </li><li>
-            <div class="col1">制作</div><div class="col2"><%= meta[i].production %></div>
-        </li><li>
-            <div class="col1">制作年</div><div class="col2"><%= meta[i].year %></div>
-        </li><li>
-            <div class="col1">制作国</div><div class="col2"><%= meta[i].country %></div>
-        </li><li>
-            <div class="col1">キャスト</div><div class="col2"><%= meta[i].cast %></div>
-        </li><li>
-            <div class="col1">スタッフ</div><div class="col2"><%= meta[i].staff %></div>
-        </li><li>
-           <div class="col1">レーティング</div><div class="col2"><%= meta[i].rating %></div>
-        </li><li>
-            <div class="col1">キーワード</div><div class="col2">
-                <% for(let j = 0; j < meta[i].tag.length; j++) { %>
-                    <span class="tag"><a href="/abemabase/tag/<%= meta[i].tag[j] %>"><%= meta[i].tag[j] %></a></span>
-                <% } %>
-            </div>
-        </li><li>
-            <div class="col1">本編映像ファイル名</div><div class="col2"><%= meta[i].videoFileName %></div>
-        </li><li>
-            <div class="col1">番組サムネ画像ファイル名</div><div class="col2"><%= meta[i].thumFileName %></div>
-        </li><li>
-            <div class="col1">シーンサムネ画像ファイル名</div><div class="col2"><%= meta[i].sceneFileName %></div>
-        </li><li>
-            <div class="col1">本編尺</div><div class="col2"><%= meta[i].duration %></div>
-        </li>
-    </ul>
-</article>
+<% for(let i = 0; i < data.length; i++) { %>
+<div class="row detail-row">
+    <div class="col-xs-6 col-lg-2 detail-label"><%= data[i].label %></div>
+    <div class="col-xs-6 col-lg-5">
+    <% if (data[i].label === "キーワード") { -%>
+        <% for(let j = 0; j < data[i].value.length; j++) { -%>
+            <span class="tag"><a href="/abemabase/tag/<%= data[i].value[j] %>"><%= data[i].value[j] %></a></span>
+        <% } -%>
+    <% } else { -%>
+        <%= data[i].value %>
+    <% } -%>
+    </div>
+</div>
 <% } %>
+

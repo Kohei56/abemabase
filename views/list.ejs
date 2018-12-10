@@ -7,11 +7,11 @@
 <h1>「<%= value %>」を検索　<%= meta.length %>件Hit!</h1>
 <% } %>
 
-<div class="searchResult">
   <% for(let i = 0; i < meta.length; i++) { %>
-  <article>
-      <div class="epTitle"><a href=/abemabase/detail/<%= meta[i]._id %>><%= meta[i].epTitle %></a></div>
-      <div class="epDec"><%= meta[i].epDec %></div>
-  </article>
+  <div class="row">
+    <div class="col-lg-6">
+        <div class="epTitle"><a href=/abemabase/detail/<%= meta[i]._id %>><%= meta[i].epTitle %></a></div>
+        <div class="epDec"><a href=/abemabase/detail/<%= meta[i]._id %>><%= meta[i].epDec %></a></div>
+    </div>
+  </div>
   <% } %>
-</div>

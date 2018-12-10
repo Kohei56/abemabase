@@ -11,53 +11,84 @@ body {
   background-color: #fff;
 }
  
+a{
+    color: #000;
+    text-decoration: none;
+}
+
 h1 {
   font-size: 32px;
   font-size: 3.2rem;
   font-weight: bold;
+  margin-bottom: 0px;
 }
 
-ul {
-  padding: 0px;
+.detail-label {
+  font-weight: bold;
+  color:#999;
 }
 
-li {
-  list-style-position: inside;
-  list-style-type: none;
+.tag a {
+  font-size: 14px !important; /* 文字のサイズ */
+  line-height: 1em;
+  background: #6c757d; /* 背景色 */
+  color: #fff; /* 文字色 */
+  display: inline-block;
+  white-space: nowrap;
+  padding: 8px 8px; /* 文字周りの余白 */
+  margin-top: 3px; /* タグ同士の余白 */
+  border-radius: 4px; /* 角を少し丸く */
+  text-decoration: none;
+}
+.tag a:hover {
+  background: #545b62; /* マウスホバー時の背景色 */
+  color: #fff; /* マウスホバー時の文字色*/
+}
+
+.detail-row{
+  margin-top: 5px;
+  word-break: break-all;
 }
 
 .searchResult{
   width: 700px;
 }
 
-article div.epTitle {
-  margin-top: 10px;
+div.epTitle {
+  font-weight: bold;
+  margin-top: 14px;
 }
 
-article div.epDec {
+div.epDec {
   margin-top: 2px;
+  font-size: 0.9em;
+  color: #555;
+
 }
 
 .content{
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .sampleEp{
-  margin-top: 30px;
- position: relative;
- margin: 2em auto;
- padding: 1.2em 1.2em 0.7em 1.2em ;
- border: 1px solid #999; /* 枠線の太さ・色 */
- width: 600px;
- display: block;
+  padding-top: 2px;
 }
 
-.title-box11 {
- position: absolute;
- padding: 0 .5em;
- left: 20px;
- top: -15px;
- background-color: #fff; /* タイトル背景色 */
+.sampleEp-box{
+  margin-top: 30px;
+  position: relative;
+  margin: 2em auto;
+  padding: 1.2em 1.2em 1.0em 1.2em ;
+  border: 1px solid #999; /* 枠線の太さ・色 */
+  display: block;
+}
+
+.title-box {
+  position: absolute;
+  padding: 0 .5em;
+  left: 20px;
+  top: -15px;
+  background-color: #fff; /* タイトル背景色 */
 }
 
 .search_container{
@@ -68,7 +99,7 @@ article div.epDec {
   padding: 3px 10px;
   border-radius: 20px;
   height: 1.9em;
-  width: 300px;
+  width: 350px;
   overflow: hidden;
 }
 .search_container input[type="text"]{

@@ -1,11 +1,8 @@
 <% extend('layout') %>
-<div class="sampleEp float-left">
-  <span class="title-box11">こんなエピソードもあります。（ランダムで<%= meta.length %>件表示）</span>
-  <ul>
+<div class="col-xs-6 col-lg-6 sampleEp-box float-left">
+  <span class="title-box">こんなエピソードもあります。（ランダムで<%= meta.length %>件表示）</span>
   <% for(let i = 0; i < meta.length; i++) { -%>
-    <li>
-        <a href=/abemabase/detail/<%= meta[i]._id %>><%= meta[i].epTitle %></a>
-    </li>
+        <div class="sampleEp"><a href=/abemabase/detail/<%= meta[i]._id %>><%= meta[i].epTitle %></a></div>
   <% } -%>
   </ul>
 </div>

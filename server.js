@@ -50,7 +50,25 @@ router.get('/detail/*', (req, res) => {
 
   abema.find({_id: query}
     , (err, meta) => {
-    res.render('detail', { meta: meta})
+    const data = [ 
+    {"label":"エピソードタイトル", "value":meta[0].epTitle}, 
+    {"label":"エピソード概要", "value":meta[0].epDec}, 
+    {"label":"エピソード詳細", "value":meta[0].epDetail},
+    {"label":"コピーライト", "value":meta[0].copyright}, 
+    {"label":"制作", "value":meta[0].production}, 
+    {"label":"制作年", "value":meta[0].year}, 
+    {"label":"制作国", "value":meta[0].country}, 
+    {"label":"キャスト", "value":meta[0].cast}, 
+    {"label":"スタッフ", "value":meta[0].staff}, 
+    {"label":"レーティング", "value":meta[0].rating},
+    {"label":"キーワード", "value":meta[0].tag}, 
+    {"label":"本編映像ファイル名", "value":meta[0].videoFileName}, 
+    {"label":"番組サムネ画像ファイル名", "value":meta[0].thumFileName}, 
+    {"label":"シーンサムネ画像ファイル名", "value":meta[0].sceneFileName}, 
+    {"label":"本編尺", "value":meta[0].duration}, 
+    ];
+
+    res.render('detail', { meta: meta, data: data})
   });
 });
 

@@ -1,10 +1,12 @@
-<h1><a href="/abemabase">Node Meta Search β0.7</a></h1>
+<h1><a href="/abemabase">Node Meta Search β0.8</a></h1>
 <form action="/abemabase/search" method="get">
     <div>
       <% if (locals.target === "epTitle") {
            var epTitleChecked = "checked"
          } else if (locals.target === "cast") {
            var castChecked = "checked"
+         } else if (locals.target === "staff") {
+           var staffChecked = "checked"
          } else {
            var epDetailChecked = "checked"
          } -%>
@@ -17,6 +19,9 @@
       </div>
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" name="t" value="cast" <%= castChecked %>><label class="form-check-label">出演者</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="t" value="staff" <%= staffChecked %>><label class="form-check-label">スタッフ</label>
       </div>
     </div>
 
