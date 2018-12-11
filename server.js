@@ -21,7 +21,7 @@ app.set('view engine', 'ejs');
 router.get("/", (req, res) => {
   //ランダムでx件表示
    abema.aggregate([{$sample: {size:10}}], (err, meta) => {
-      res.render('index', { meta: meta})
+      res.render('index', { meta:meta })
    });
 });
 
