@@ -1,4 +1,4 @@
-<h1><a href="/abemabase">Node Meta Search β0.8</a></h1>
+<h1><a href="/abemabase">Node Meta Search β0.8.1</a></h1>
 <form action="/abemabase/search" method="get">
     <div>
       <% if (locals.target === "epTitle") {
@@ -26,7 +26,7 @@
     </div>
 
     <div class="form-inline search_container">
-      <input class="" type="text" size="25" placeholder="キーワードを入力" name="q" value="<% if (locals.value) { %><%= value %><% } %>"/>
+      <input class="" type="text" size="36" placeholder="キーワードを入力" name="q" value="<% if (locals.value) { %><%= value %><% } %>"/>
       <input class="" type="submit" value="&#xf002"/>
     </div>
 </form>
